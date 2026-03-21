@@ -33,11 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle (simple version)
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
 
-    if (menuBtn) {
+    if (menuBtn && navLinks) {
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Add styles for active nav in CSS if needed for full functionality
+            menuBtn.classList.toggle('active');
+        });
+
+        // Close the menu when a link is clicked on mobile
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuBtn.classList.remove('active');
+                }
+            });
         });
     }
 
