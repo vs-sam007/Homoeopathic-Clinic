@@ -20,6 +20,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -28,6 +29,8 @@ body {
     line-height: 1.6;
     background-color: var(--white);
     overflow-x: hidden;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, .logo-text {
@@ -751,6 +754,10 @@ header.scrolled .mobile-menu-btn span {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 25px;
+    }
+
     .hero h1 {
         font-size: 2.8rem;
     }
@@ -806,6 +813,10 @@ header.scrolled .mobile-menu-btn span {
 }
 
 @media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
     }
